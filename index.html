@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from iamf-a-e.github.io/portfolio.github.io/ by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 29 Nov 2025 20:09:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <meta name="copyright" content="MACode ID, https://www.macodeid.com/">
+  
+  <title>Charleen T.Mandibvira - Portfolio</title>
+
+  <link rel="shortcut icon" href="favicon.html" type="image/x-icon">
+   
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  
+  <link rel="stylesheet" type="text/css" href="owl.carousel.css">
+  
+  <link rel="stylesheet" type="text/css" href="perfect-scrollbar.html">
+  
+  <link rel="stylesheet" type="text/css" href="nice-select.css">
+  
+  <link rel="stylesheet" type="text/css" href="jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="virtual.css">
+  
+  <link rel="stylesheet" type="text/css" href="topbar.virtual.css">
+
+  <link rel="stylesheet" href="../../cdn.jsdelivr.net/gh/lykmapipo/themify-icons/themify-icons.css">
+
+  <link href="../../cdn.jsdelivr.net/npm/bootstrap%405.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Web Designer Dialog Box</title>
+  <style>
+    /* Responsive Base Styles */
+    html {
+      font-size: 16px;
+    }
+    
+    body {
+      overflow-x: hidden;
+    }
+    
+    .container {
+      width: 100%;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    
+    /* Dialog Styles */
+    .dialog-overlay,
+    .dialog-overlay-1,
+    .dialog-overlay-2 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      padding: 15px;
+    }
+
+    .dialog-box,
+    .dialog1-box,
+    .dialog2-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      max-width: 90%;
+      text-align: center;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .btn:hover {
+      background-color: #4bff3b;
+    }
+
+    .btn-theme {
+      background-color: #4bff3b;
+    }
+
+    .btn-theme:hover {
+      background-color: #4bff3b;
+    }
+
+    :root {
+      --primary-color: #94a3b8;
+      --primary-dark: #4f46e5;
+      --text-light: #f8fafc;
+      --text-muted: #94a3b8;
+      --bg-dark: #343a40;
+      --bg-darker: #020617;
+      --accent-color: #4bff3b;
+    }
+    
+    .modern-footer {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+      color: var(--text-light);
+      padding: 4rem 0 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .modern-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    }
+    
+    .footer-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .footer-section {
+      margin-bottom: 2rem;
+    }
+    
+    .footer-section h5 {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .footer-section h5::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent-color);
+    }
+    
+    .footer-section p, .footer-section li {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    
+    .footer-section a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .footer-section a:hover {
+      color: var(--primary-color);
+      padding-left: 5px;
+    }
+    
+    .footer-section a::before {
+      content: '→';
+      position: absolute;
+      left: -15px;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-section a:hover::before {
+      opacity: 1;
+      left: -10px;
+    }
+    
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .contact-info i {
+      color: var(--primary-color);
+      width: 16px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .social-links a:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .subscribe-title {
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .subscribe-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 8px 0 0 8px;
+      color: var(--text-light);
+    }
+    
+    .subscribe-form input[type="email"]::placeholder {
+      color: var(--text-muted);
+    }
+    
+    .subscribe-form button {
+      background: #4bff3b;
+      color: white;
+      border: none;
+      padding: 0 25px;
+      border-radius: 0 8px 8px 0;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .subscribe-form button:hover {
+      background: #04440a;
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #ffffff0d;
+      color: var(--text-muted);
+      font-size: 1.0rem;
+    }
+    
+    .copyright a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .copyright a:hover {
+      color: var(--accent-color);
+    }
+    
+    .heart {
+      color: #e74c3c;
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    .btn-back_to_top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #4bff3b;
+      color: #fff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      transition: opacity 0.3s, visibility 0.3s;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+    }
+
+    .btn-back_to_top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .alert-box {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      z-index: 9999;
+    }
+
+    /* Dialog box */
+    .alert-content {
+      background: white;
+      color: black;            
+      padding: 20px 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-family: Arial, sans-serif;
+      animation: fadeIn 0.3s ease;
+    }
+
+    /* Button */
+    .alert-content button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #4bff3b;
+      border: none;
+      color: black;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .alert-content button:hover {
+      background: #04440a;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+
+    .portfolio-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-tip-bubble {
+      background: #4bff3b;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      animation: floatbubble 2.5s ease-in-out infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes floatbubble {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 1200px) {
+      .footer-title {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .footer-title {
+        font-size: 2rem;
+      }
+      
+      .portfolio-heading {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .portfolio-tip-bubble {
+        white-space: normal;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      html {
+        font-size: 14px;
+      }
+      
+      .footer-title {
+        font-size: 1.8rem;
+      }
+      
+      .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .subscribe-form input[type="email"],
+      .subscribe-form button {
+        border-radius: 8px;
+        width: 100%;
+      }
+      
+      .portfolio-heading h1 {
+        font-size: 1.8rem;
+      }
+      
+      .filterable-button {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+      }
+      
+      .filterable-button .btn {
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+        padding: 6px 12px;
+      }
+      
+      .dialog-box,
+      .dialog1-box,
+      .dialog2-box {
+        padding: 15px;
+        max-width: 95%;
+      }
+      
+      .modern-footer {
+        padding: 2rem 0 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      html {
+        font-size: 13px;
+      }
+      
+      .footer-title {
+        font-size: 1.6rem;
+      }
+      
+      .portfolio-heading h1 {
+        font-size: 1.6rem;
+      }
+      
+      .filterable-button .btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+      }
+      
+      .btn-back_to_top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+      
+      .social-links {
+        justify-content: center;
+      }
+      
+      .modern-footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+    
+    /* Navigation responsiveness */
+    .navbar-collapse {
+      transition: all 0.3s ease;
+    }
+    
+    @media (max-width: 991px) {
+      .navbar-nav {
+        text-align: center;
+        padding: 10px 0;
+      }
+      
+      .navbar-nav .nav-item {
+        margin: 5px 0;
+      }
+    }
+    
+    /* About section responsiveness */
+    .page-about .img-place img {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      .page-about .row {
+        text-align: center;
+      }
+      
+      .page-about .theme-list {
+        text-align: left;
+        display: inline-block;
+      }
+    }
+    
+    /* Skills section responsiveness */
+    @media (max-width: 768px) {
+      .progress-wrapper {
+        margin-bottom: 15px;
+      }
+    }
+    
+    /* Portfolio grid responsiveness */
+    .grid-item {
+      margin-bottom: 30px;
+    }
+    
+    @media (max-width: 576px) {
+      .grid-item {
+        margin-bottom: 20px;
+      }
+    }
+    
+    /* Testimonial responsiveness */
+    @media (max-width: 768px) {
+      .testi-carousel .row {
+        flex-direction: column;
+      }
+      
+      .testi-carousel .col-md-6 {
+        width: 100%;
+      }
+    }
+    
+    /* Contact form responsiveness */
+    @media (max-width: 768px) {
+      .vg-contact-form .form-row .col-6 {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="theme-red">
+  
+  <!-- Back to top button -->
+  <div class="btn-back_to_top" id="backToTop">
+    <span class="ti-arrow-up"></span>
+  </div>
+
+  
+  <div class="vg-page page-home" id="home" style="background-image: url(bg_image_1.jpg)">
+    <!-- Navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
+      <div class="container">
+        <a href="#" class="navbar-brand">Charleen T. Mandibvira's Portfolio</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar" aria-expanded="true">
+          <span class="ti-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a href="#home" class="nav-link" data-animate="scrolling">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#about" class="nav-link" data-animate="scrolling">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#portfolio" class="nav-link" data-animate="scrolling">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a href="#blog" class="nav-link" data-animate="scrolling">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link" data-animate="scrolling">Contact</a>
+            </li>
+          </ul>
+          <ul class="nav ml-auto">
+            <li class="nav-item">
+              <button class="btn btn-fab btn-theme no-shadow">En</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> <!-- End Navbar -->
+    <!-- Caption header -->
+    <div class="caption-header text-center wow zoomInDown">
+      <h5 class="fw-normal">Welcome</h5>
+      <h1 class="fw-light mb-4">I'm <b class="fg-theme">Charleen T.  </b> Mandibvira</h1>
+      <div class="badge">Future Social Impact Leader</div>
+    </div> <!-- End Caption header -->
+    <div class="floating-button"><span class="ti-mouse"></span></div>
+  </div>
+  
+  <div class="vg-page page-about" id="about">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-4 py-3">
+          <div class="img-place wow fadeInUp">
+            <img src="dawa.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 wow fadeInRight">
+          <h1 class="fw-light">Charleen T.Mandibvira</h1>
+          <h5 class="fg-theme mb-3">Social Worker</h5>
+          <p class="text-muted">A dedicated and empathic Social Worker with a strong passion for Community Development, Youth Empowerment and Social Justice.</p>
+          <ul class="theme-list">
+            <li><b>From:</b> Harare, Zimbabwe</li>
+            <li><b>Lives In:</b> Harare</li>
+            <li><b>D.O.B:</b> 02 February 2005</li>
+            <li><b>Gender:</b> Female</li>
+            <li><b>Languages:</b> English Shona     Sign Language</li>
+            <li><b>Interests:</b> Project Management(PM)   Community Development(CD)   Artificial Intelligence(AI)  Youth Empowerment (YE)  Business Managemnt(BM) Social Justice (SJ) Gender Equality (GE) Child Welfare (CW)
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container py-5">
+      <h1 class="text-center fw-normal wow fadeIn">My Skills & Attributes</h1>
+      <div class="row py-3">
+        <div class="col-md-6">
+          <div class="px-lg-3">
+            <h4 class="wow fadeInUp">Skills</h4>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Record keeping & Documentation</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">80%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Basic Computer literacy (MS Office, Case Management systems)</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">80%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Vulnerability Assessment & Report writing</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">100%</div>
+              </div>
+            </div>
+            <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Counselling & Interviewing</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">70%</div>
+              </div>
+ 
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="px-lg-3">
+            
+            <div class="progress-wrapper wow fadeInUp">
+              
+              <span class="caption">Social Media Content Creation</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+ 	      <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Coomunication & Public Speaking</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">90%</div>
+              </div>
+            </div>
+              <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Youth Mobilization & Community Outreach</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 79%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">79%</div>
+              </div>
+            </div>
+              <div class="progress-wrapper wow fadeInUp">
+              <span class="caption">Empathy & Professional Conduct</span>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 89%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">89%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container pt-5">
+      <div class="row">
+        <div class="col-md-6 wow fadeInRight">
+          <h2 class="fw-normal">Education</h2>
+          <ul class="timeline mt-4 pr-md-5">
+            <li>
+              <div class="title">2025-2028</div>
+              <div class="details">
+                <h5>BSc Social Work</h5>
+                <small class="fg-theme">Womens University in Africa</small>
+                <p>Degree</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">2023</div>
+              <div class="details">
+                <h5>Advanced level - ZIMSEC</h5>
+                <small class="fg-theme">3 subjects</small>
+                <p>Including English Literature, History & Family and Religious Studies FRS</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">2021</div>
+              <div class="details">
+                <h5>Ordinary level - ZIMSEC</h5>
+                <small class="fg-theme">9 subjects</small>
+                <p>Including English, Mathematics and Combined Science</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+	</li>
+        <div class="col-md-6 wow fadeInRight" data-wow-delay="200ms">
+          <h2 class="fw-normal">Work Experience</h2>
+          <ul class="timeline mt-4 pr-md-5">
+            <li>
+              <div class="title">June 2025 - Present</div>
+              <div class="details">
+                <h5>Youth In Action Association (YIAA)</h5>
+                <small class="fg-theme">Social Media Manager</small>
+                <p>Manage and develop the organisation's social media presence</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">June 2025 - Present</div>
+              <div class="details">
+                <h5>Volunteer - YIAA</h5>
+                <small class="fg-theme">Volunteer</small>
+                <p>Assist in organising Youth Development events.</p>
+              </div>
+            </li>
+            <li>
+              <div class="title">Ongoing</div>
+              <div class="details">
+                <h5>Bright Smiles Foundation</h5>
+                <small class="fg-theme">Volunteer</small>
+                <p>Participate in hygiene, health and child rights awareness campgains</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+ <!-- Page Service -->   
+ <div class="vg-page page-service" id="services">
+ <h1 class="text-center wow fadeInUp">What I can do!</h1>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4 wow fadeInUp">
+            <div class="card card-body">
+              <div class="iconic">
+                <span class="ti-layers"></span>
+              </div>
+              <h4 class="fg-theme">Social Media Management</h4>
+              <p>As an experienced Social Media Content Creator, I would be honored to craft a compelling online presence for your business. With a keen eye for engaging content and a deep understanding of user experience principles, I specialize in strategizing and editing vidoes, text, photographs...</p>
+              <a href="#" class="btn btn-theme btn-rounded" onclick="showDialog()">Read More</a>
+            </div>
+          </div>
+          <div class="dialog-overlay" id="dialog-overlay">
+           <div class="dialog-box">
+            <h2>Welcome to my Social Media Management Services</h2>
+            <p>As an experienced Social Media Content Creator, I would be honored to craft a compelling online presence for your business. With a keen eye for engaging content and a deep understanding of user experience principles, I specialize in strategizing and editing videos, text, photographs and creating visually captivating and engaging content  that effectively showcase your brand and engage your target audience.
+
+My content creation process is centered on collaborating closely with clients to deeply understand their unique needs, goals, and brand identity. I then leverage my expertise in brainstorming, insights, and cutting-edge technologies to translate your vision into a polished, high-engagment outreach.
+
+Whether you're looking to put your organisation on the digital map or create a social impact through content, I am committed to delivering exceptional results that exceed your expectations. With a track record of successful YIAA launches and satisfied clients, I have the skills and experience to transform your online presence into a powerful tool that drives traffic, enhances conversions, and elevates your business to new heights.
+
+I welcome the opportunity to discuss how I can help you achieve your Content Creation goals. Let's work together to create a content that not only looks stunning, but also delivers a seamless and engaging user experience that sets you apart from the competition.</p>
+            <a href="#" class="btn" onclick="closeDialog()">Close</a>
+          </div>
+        </div>
+
+  <script>
+    function showDialog() {
+      document.getElementById("dialog-overlay").style.display = "flex";
+    }
+
+    function closeDialog() {
+      document.getElementById("dialog-overlay").style.display = "none";
+    }
+  </script>
+          <div class="col-md-6 col-lg-4 wow fadeInUp">
+            <div class="card card-body">
+              <div class="iconic">
+                <span class="ti-layers"></span>
+              </div>
+              <h4 class="fg-theme">Monitoring & Evaluation</h4>
+              <p>As an aspiring Social Impact leader,I leverage Monitoring and Evaluation (M&E) to measure the effectiveness, efficiency and impact of development programs. I support organizations in collecting high-quality data, tracking key perfomance indicators, evaluating project outcomes and generating evidence-based insights that inform...</p>
+              <a href="#" class="btn btn-theme btn-rounded" onclick="showDialog1('dialog-overlay-1')">Read More</a>
+            </div>
+          </div>
+          <div class="dialog-overlay" id="dialog-overlay-1">
+           <div class="dialog1-box">
+            <h2>Welcome to my Social Work activties</h2>
+            <p>As an aspiring Social Impact leader,I leverage Monitoring and Evaluation (M&E) to measure the effectiveness, efficiency and impact of development programs. I support organizations in collecting high-quality data, tracking key perfomance indicators, evaluating project outcomes and generating evidence-based insights that inform strategic decision-making.
+
+My goal is to ensure that social interventions create measurable, sustainable and meaningful change for individuals and communities. 
+
+I believe that every development initiative should be guided by evidence. Through robust Monitoring & Evaluation practices, I aim to help organizations demonstrate accountability, maximise social impact and make data-driven decisions that improve lives and strengthen communities.
+</p>
+            <a href="#" class="btn" onclick="closeDialog1('dialog-overlay-1')">Close</a>
+          </div>
+        </div>
+
+  <script>
+    function showDialog1() {
+      document.getElementById("dialog-overlay-1").style.display = "flex";
+    }
+
+    function closeDialog1() {
+      document.getElementById("dialog-overlay-1").style.display = "none";
+    }
+  </script>
+          <div class="col-md-6 col-lg-4 wow fadeInUp">
+            <div class="card card-body">
+              <div class="iconic">
+                <span class="ti-layers"></span>
+              </div>
+                <h4 class="fg-theme">Social Innovation</h4>
+              <p>As a skilled innovator, I bring a unique combination of social and  technical expertise, creativity, and a deep understanding of human-centered design to develop innovative solutions that address complex social challenges. I believe innovation should be practical, inclusive, scalable and capable of creating...</p>
+              <a href="#" class="btn btn-theme btn-rounded" onclick="showDialog2('dialog-overlay-2')">Read More</a>
+            </div>
+          </div>
+          <div class="dialog-overlay-2" id="dialog-overlay-2">
+           <div class="dialog2-box">
+            <h2>Welcome to my Social Innovation Hub</h2>
+            <p>As a skilled innovator, I bring a unique combination of social and  technical expertise, creativity, and a deep understanding of human-centered design to develop innovative solutions that address complex social challenges. I believe innovation should be practical, inclusive, scalable and capable of creating measurable improvements in people's lives. By combining emerging technologies with community needs, I aim to design products and services that promote sustainable development and social well-being.
+
+I aspire to create and scale technology-driven innovations that solve real-world challenges, empower communities and contribute to achieving the Sustainable Developement Goals (SDGs). My goal is to bridge engineering, artificial intelligence and social development to build products that improve lives and create lasting social impact.
+</p>
+            <a href="#" class="btn" onclick="closeDialog2('dialog-overlay-2')">Close</a>
+          </div>
+        </div>
+
+  <script>
+    function showDialog2() {
+      document.getElementById("dialog-overlay-2").style.display = "flex";
+    }
+
+    function closeDialog2() {
+      document.getElementById("dialog-overlay-2").style.display = "none";
+    }
+  </script>
+            </div>
+          </div>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+ <!-- End page services -->
+  
+  <div class="vg-page page-funfact" style="background-image: url(bg_banner.jpg);">
+    <div class="container">
+      <div class="row section-counter">
+        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+          <h1 class="number" data-number="10">10</h1>
+          <span>Clients</span>
+        </div>
+        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+          <h1 class="number" data-number="7">7</h1>
+          <span>Project Complete</span>
+        </div>
+        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+          <h1 class="number" data-number="3">3</h1>
+          <span>Project Ongoing</span>
+        </div>
+        <div class="col-md-6 col-lg-3 py-4 wow fadeIn">
+          <h1 class="number" data-number="5">5</h1>
+          <span>Client Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Portfolio page -->
+<div class="vg-page page-portfolio" id="portfolio">
+  <div class="container">
+
+    <!-- Portfolio Header -->
+    <div class="text-center wow fadeInUp">
+      <div class="badge badge-subhead">Portfolio</div>
+    </div>
+
+    <!-- WORK SECTION -->
+    <div class="portfolio-heading">
+      <h1 class="text-center fw-normal wow fadeInUp">See my work</h1>
+      <div class="portfolio-tip-bubble">click pictures to visit work</div>
+    </div>
+
+    <div id="work-filters" class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+      <button class="btn btn-theme-outline selected" data-filter="*">All</button>
+      <button class="btn btn-theme-outline" data-filter=".apps">Apps</button>
+      <button class="btn btn-theme-outline" data-filter=".websites">Websites</button>
+      <button class="btn btn-theme-outline" data-filter=".chatbots">Chatbots</button>
+    </div>
+
+    <div id="work-grid" class="gridder my-3">
+
+      <!-- Website -->
+      <div class="grid-item websites wow zoomIn">
+        <div class="img-place">
+          <a href="https://dawa-health.com/" target="_blank">
+            <img src="dawawebsite.png" alt="Youth In Action Association Website" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Youth In Action Association Association</h5>
+            <p>Maternal Health</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="grid-item chatbots wow zoomIn">
+        <div class="img-place">
+          <a href="https://wa.me/message/JTNMK5O744AML1" target="_blank">
+            <img src="zimbo.png" alt="Zimbogrocer Chatbot" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Zimbogrocer Chatbot</h5>
+            <p>Grocery Shopping</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="grid-item chatbots wow zoomIn">
+        <div class="img-place">
+          <a href="https://wa.me/message/QXRLI5ZH5SCLC1" target="_blank">
+            <img src="cakefairy.png" alt="SafeHer App" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">SafeHer App</h5>
+            <p>Cake Ordering Automation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- App -->
+      <div class="grid-item apps wow zoomIn">
+        <div class="img-place">
+          <a href="https://play.google.com/store/apps/details?id=co.zw.ocrem" target="_blank">
+            <img src="ocrem.jpg" alt="Ocrem Mobile App" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Ocrem Mobile App</h5>
+            <p>Learning App</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Website -->
+      <div class="grid-item websites wow zoomIn">
+        <div class="img-place">
+          <a href="https://zimbogrocer.shop/" target="_blank">
+            <img src="website.png" alt="Zimbogrocer Website" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Zimbogrocer Website</h5>
+            <p>Grocery Shopping</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot -->
+      <div class="grid-item chatbots wow zoomIn">
+        <div class="img-place">
+          <a href="https://wa.me/message/NLJYGY2ZWQLLO1" target="_blank">
+            <img src="speedgo.png" alt="SpeedGo Chatbot" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">SpeedGo Chatbot</h5>
+            <p>Borehole Drilling</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End work gridder -->
+
+    <div class="text-center wow fadeInUp">
+      <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
+    </div>
+
+    <br><br>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="portfolio-heading">
+      <h1 class="text-center fw-normal wow fadeInUp">See my achievements</h1>
+      <div class="portfolio-tip-bubble">click pictures to visit achievements</div>
+    </div>
+
+    <div id="achievements-filters" class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+      <button class="btn btn-theme-outline selected" data-filter="*">All</button>
+      <button class="btn btn-theme-outline" data-filter=".awards">Awards</button>
+      <button class="btn btn-theme-outline" data-filter=".publications">Publications</button>
+      <button class="btn btn-theme-outline" data-filter=".spotlights">Spotlights</button>
+    </div>
+
+    <div id="achievements-grid" class="gridder my-3">
+
+      <!-- DS4Health Award -->
+      <div class="grid-item awards wow zoomIn">
+        <div class="img-place">
+          <a href="https://www.linkedin.com/posts/kmunzwa_ds4health-medsiglip-ds4health-activity-7387004899879162880-1F3M?utm_source=share" target="_blank">
+            <img src="DS4H.jpg" alt="DS4H" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">1st Place Winner</h5>
+            <p>Data Science for Health Ideathon 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spotlight -->
+      <div class="grid-item spotlights wow zoomIn">
+        <div class="img-place">
+          <a href="https://www.linkedin.com/posts/tariro-munzwa-b57437186_deeplearningindaba-ai-africa-activity-7363653161284177921-Wt5g" target="_blank">
+            <img src="panel.jpg" alt="DLI Panel" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Panelist for AI Startups</h5>
+            <p>Deep Learning Indaba 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spotlight -->
+      <div class="grid-item spotlights wow zoomIn">
+        <div class="img-place">
+          <a href="https://www.linkedin.com/posts/tariro-munzwa-b57437186_aiforgood-zambianai-naturallanguageprocessing-ugcPost-7366876293616824321-xnfe" target="_blank">
+            <img src="spotlight2.jpg" alt="Spotlight" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Featured in Spotlight Session</h5>
+            <p>AI Mapping for Zambian Languages</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Publication -->
+      <div class="grid-item publications wow zoomIn">
+        <div class="img-place">
+          <a href="https://drive.google.com/file/d/1ybzIz6jj72SRSBha44gNsmjcZxlViO0q/view" target="_blank">
+            <img src="publication.png" alt="Publication" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">AI at the Frontlines</h5>
+            <p>Reproductive Health Research</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End achievement gridder -->
+
+    <div class="text-center wow fadeInUp">
+      <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
+    </div>
+
+    <br><br>
+
+    <!-- CERTIFICATIONS -->
+    <div class="portfolio-heading">
+      <h1 class="text-center fw-normal wow fadeInUp">See my certifications</h1>
+      <div class="portfolio-tip-bubble">click pictures to visit certifications</div>
+    </div>
+
+    <div id="certifications-filters" class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
+      <button class="btn btn-theme-outline selected" data-filter="*">All</button>
+      <button class="btn btn-theme-outline" data-filter=".ai">AI</button>
+      <button class="btn btn-theme-outline" data-filter=".participation">Participation</button>
+    </div>
+
+    <div id="certifications-grid" class="gridder my-3">
+
+      <!-- Certification -->
+      <div class="grid-item ai wow zoomIn">
+        <div class="img-place">
+          <a href="https://www.coursera.org/account/accomplishments/verify/4VQXTTJSGCQK" target="_blank">
+            <img src="certification.png" alt="Google AI Essentials" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Google AI Essentials</h5>
+            <p>AI Certification</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-item participation wow zoomIn">
+        <div class="img-place">
+          <a href="https://www.dropbox.com/scl/fi/j0f7efmf9rq64v4sd5zt1/Tariro_Munzwa_Certificate.pdf?rlkey=t9sywk463j3cznck1o2ap4i0x&amp;st=uryhv5e4&amp;dl=0" target="_blank">
+            <img src="participation.png" alt="Deep Learning Indaba" style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+          </a>
+          <div class="img-caption">
+            <h5 class="fg-theme">Deep Learning Indaba</h5>
+            <p>Participation Certificate</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End certification gridder -->
+
+    <div class="text-center wow fadeInUp">
+      <a href="javascript:void(0)" class="btn btn-theme">Load More</a>
+    </div>
+
+    <br><br>
+
+  </div><!-- End container -->
+</div>
+<!-- End Portfolio page -->
+
+  
+  <!-- Testimonial -->
+  <div class="vg-page page-testimonial">
+    <div class="container">
+      <h1 class="text-center fw-normal wow fadeInUp">What Clients are Saying</h1>
+      <div class="row justify-content-center mt-5 wow fadeInUp">
+        <div class="col-md-9">
+          <div class="owl-carousel testi-carousel">
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="img-place">
+                    <img src="kal.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="caption">
+                    <div class="testi-content">Her professionalism, attention to detail and genuine care made me feel heard, respected and empowered</div>
+                    <div class="testi-info">
+                      <div class="thumb-profile">
+                        <img src="kal.jpg" alt="">
+                      </div>
+                      <div class="tagline">
+                        <h5 class="mb-0">Tendekai Masoka</h5>
+                        <span class="text-muted">IT Engineer - Project Management Zimbabwe(PMZ)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="img-place">
+                    <img src="wht.jpg" alt="">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="caption">
+                    <div class="testi-content">I highly recommend her services to anyone looking for a knowledgeble and compassionate partner</div>
+                    <div class="testi-info">
+                      <div class="thumb-profile">
+                        <img src="wht.jpg" alt="">
+                      </div>
+                      <div class="tagline">
+                        <h5 class="mb-0">Mukudzei Rukodzi</h5>
+                        <span class="text-muted"> BEE IT Head of Department</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End testimonial -->
+  
+  <!-- Client -->
+  <!-- End client -->
+  
+  <!-- Blog -->
+  <div class="vg-page page-blog" id="blog">
+    <div class="container">
+      <div class="text-center">
+        <div class="badge badge-subhead">Blog</div>
+      </div>
+      <h1 class="text-center fw-normal wow fadeInUp">Latest Post</h1>
+      <div class="row post-grid">
+        <div class="col-md-6 col-lg-4 wow fadeInUp">
+          <div class="card">
+            <div class="img-place">
+              <img src="ai.jpg" alt="">
+            </div>
+            <div class="caption">
+              <a href="javascript:void(0)" class="post-category">AI</a>
+              <a href="#" class="post-title">AI-driven softwares</a>
+              <span class="post-date"><span class="sr-only">Published on</span> July 12, 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow fadeInUp">
+          <div class="card">
+            <div class="img-place">
+              <img src="di.jpg" alt="">
+            </div>
+            <div class="caption">
+              <a href="javascript:void(0)" class="post-category">Digitization</a>
+              <a href="#" class="post-title">Digital Technology</a>
+              <span class="post-date"><span class="sr-only">Published on</span> July 12, 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 wow fadeInUp">
+          <div class="card">
+            <div class="img-place">
+              <img src="tr.jpg" alt="">
+            </div>
+            <div class="caption">
+              <a href="javascript:void(0)" class="post-category">Trends in Technology</a>
+              <a href="#" class="post-title">Digital Trends</a>
+              <span class="post-date"><span class="sr-only">Published on</span>July 12, 2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center py-3 wow fadeInUp">
+          <a href="#" class="btn btn-theme">See All Posts</a>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End blog -->
+  
+  <!-- Contact -->
+  <div class="vg-page page-contact" id="contact">
+    <div class="container-fluid">
+      <div class="text-center wow fadeInUp">
+        <div class="badge badge-subhead">Contact</div>
+      </div>
+      <h1 class="text-center fw-normal wow fadeInUp">Get in touch</h1>
+      <div class="row py-5">
+        <div class="col-lg-7 px-0 pr-lg-3 wow zoomIn">
+          <div class="vg-maps">
+            <div id="google-maps" style="width: 100%; height: 100%;"></div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <form class="vg-contact-form">
+            <div class="form-row">
+              <div class="col-12 mt-3 wow fadeInUp">
+                <input class="form-control" type="text" name="Name" placeholder="Your Name">
+              </div>
+              <div class="col-6 mt-3 wow fadeInUp">
+                <input class="form-control" type="text" name="Email" placeholder="Email Address">
+              </div>
+              <div class="col-6 mt-3 wow fadeInUp">
+                <input class="form-control" type="text" name="Subject" placeholder="Subject">
+              </div>
+              <div class="col-12 mt-3 wow fadeInUp">
+                <textarea class="form-control" name="Message" rows="6" placeholder="Enter message here.."></textarea>
+              </div>
+              <button type="submit" class="btn btn-theme mt-3 wow fadeInUp ml-1">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> <!-- End Contact -->
+  
+  <!-- Footer -->
+  <footer class="modern-footer">
+        <div class="container">
+                        
+            <div class="row">
+                <div class="col-lg-4 footer-section">
+                    <h5>Where to find me</h5>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Crowborough North, Harare</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 footer-section">
+                    <h5>Follow me</h5>
+                    <div class="social-links">
+                        <a href="https://github.com/iamf-a-e" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/tendekai-masoka-384275244/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>                        
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 footer-section">
+                    <h5>Contact me</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-envelope"></i>charleenmandibvira@gmail.com'</li>
+                        <li><i class="fas fa-phone"></i> +263 78 524 3104</li>                        
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subscribe-section">
+              <h3 class="subscribe-title">Stay Updated</h3>
+              <form class="subscribe-form" onsubmit="showSubscribed(event)">
+                  <input type="email" placeholder="Enter your email address" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+
+          <!-- Custom Alert -->
+          <div id="customAlert" class="alert-box">
+            <div class="alert-content">
+                <p>Subscribed successfully!</p>
+                <button onclick="closeAlert()">OK</button>
+            </div>
+          </div>              
+
+            
+            <div class="copyright">
+                <p class="text-center mb-0 mt-4">Copyright &copy;2026. All right reserved | This portfolio is made with <span class="ti-heart fg-theme-red"></span> by <a href="https://www.macodeid.com/">Tendekai Masoka</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+  <script src="../../cdn.jsdelivr.net/npm/bootstrap%405.3.0/dist/js/bootstrap.bundle.min.js"></script>  
+  
+  <script src="jquery-3.5.1.min.js"></script>
+    
+  <script src="bootstrap.bundle.min.js"></script>
+    
+  <script src="owl.carousel.min.js"></script>
+    
+  <script src="perfect-scrollbar-2.html"></script>
+    
+  <script src="isotope.pkgd.min.js"></script>
+    
+  <script src="jquery.nice-select.min.js"></script>
+    
+  <script src="jquery.fancybox.min.js"></script>
+
+  <script src="wow.min.js"></script>
+
+  <script src="jquery.animateNumber.min.js"></script>
+
+  <script src="jquery.waypoints.min.js"></script>
+
+  <script src="google-maps.js"></script>
+    
+  <script src="topbar-virtual.js"></script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&amp;callback=initMap"></script>
+  
+  <script>
+    const backToTopButton = document.getElementById('backToTop');
+
+    // Show/hide button when scrolling
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    // Scroll smoothly to top when clicked
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+  <script>
+          function showSubscribed(e) {
+              e.preventDefault();
+              document.getElementById("customAlert").style.display = "flex";
+          }
+
+          function closeAlert() {
+              document.getElementById("customAlert").style.display = "none";
+          }
+          </script>
+</body>
+</html>
